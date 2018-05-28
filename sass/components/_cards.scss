@@ -1,0 +1,67 @@
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
+  &-side {
+    height: 50rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: .3rem;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($black, .15);
+  }
+  &-side-front {
+    background-color: $white;
+  }
+  &-side-back {
+    transform: rotateY(180deg);
+    &-1 {
+      background-image: linear-gradient(to right bottom, $lightOrange, $mediumOrange);
+    }
+  }
+  &:hover &-side-front {
+    transform: rotateY(-180deg);
+  }  
+  &:hover &-side-back {
+    transform: rotateY(0);
+  }
+  &-picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: color-burn;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &-1 {
+      background-image: linear-gradient(to right bottom, $lightOrange, $mediumOrange), url(../img/nat-5.jpg);
+    }    
+    &-2 {
+      background-image: url(../img/nat-5.jpg);
+    }    
+    &-3 {
+      background-image: url(../img/nat-5.jpg);
+    }
+  }
+  &-heading {
+    font-size: 2.8rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: right;
+    color: $white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 65%;
+  }
+  &-heading-span {
+    padding: 1rem 1.5rem;
+    &-1 {
+      background-image: linear-gradient(to right bottom, rgba($lightOrange, .85), rgba($mediumOrange, .85));
+    }
+  }
+}
