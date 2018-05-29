@@ -42,7 +42,8 @@
     background-blend-mode: color-burn;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
     &-1 {
       background-image: linear-gradient(to right bottom, $lightOrange, $mediumOrange), url(../img/nat-5.jpg);
     }    
