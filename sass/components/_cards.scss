@@ -2,9 +2,9 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem;
+  height: 52rem;
   &-side {
-    height: 50rem;
+    height: 52rem;
     transition: all .8s ease;
     position: absolute;
     top: 0;
@@ -22,6 +22,12 @@
     transform: rotateY(180deg);
     &-1 {
       background-image: linear-gradient(to right bottom, $lightOrange, $mediumOrange);
+    }
+    &-2 {
+      background-image: linear-gradient(to right bottom, $lightGreen, $mediumGreen);
+    }
+    &-3 {
+      background-image: linear-gradient(to right bottom, $lightBlue, $mediumPurple);
     }
   }
   &:hover &-side-front {
@@ -41,10 +47,10 @@
       background-image: linear-gradient(to right bottom, $lightOrange, $mediumOrange), url(../img/nat-5.jpg);
     }    
     &-2 {
-      background-image: url(../img/nat-5.jpg);
+      background-image: linear-gradient(to right bottom, $lightGreen, $mediumGreen), url(../img/nat-6.jpg);
     }    
     &-3 {
-      background-image: url(../img/nat-5.jpg);
+      background-image: linear-gradient(to right bottom, $lightGreen, $mediumGreen), url(../img/nat-5.jpg);
     }
   }
   &-heading {
@@ -56,12 +62,59 @@
     position: absolute;
     top: 12rem;
     right: 2rem;
-    width: 65%;
+    width: 60%;
   }
   &-heading-span {
     padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
     &-1 {
       background-image: linear-gradient(to right bottom, rgba($lightOrange, .85), rgba($mediumOrange, .85));
     }
+    &-2 {
+      background-image: linear-gradient(to right bottom, rgba($darkGreen, .85), rgba($mediumGreen, .85));
+    }
+    &-3 {
+      background-image: linear-gradient(to right bottom, rgba($darkGreen, .85), rgba($mediumGreen, .85));
+    }
+  }
+  &-details {
+    padding: 3rem;
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: .1rem solid $lighterGrey;
+        }
+      }
+    }
+  }
+  &-cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+  &-price-box {
+    text-align: center;
+    color: $white;
+    margin-bottom: 8rem;
+  }
+  &-price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  &-price-value {
+    font-size: 6rem;
+    font-weight: 100;
   }
 }
