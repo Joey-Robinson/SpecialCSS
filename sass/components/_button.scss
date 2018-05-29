@@ -20,7 +20,7 @@
   }
   &:active {
     transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba($black, 0.2);
+    box-shadow: 0 .5rem 1rem rgba($black, .2);
   }
   &-white {
     background: $white;
@@ -28,7 +28,11 @@
     &::after {
       background: $white;
     }
-  }  
+  }
+  &-green {
+    background-color: $darkGreen;
+    color: $white;
+  } 
   &::after {
     content: "";
     display: inline-block;
