@@ -1,0 +1,45 @@
+.form {
+  &-group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  &-input {
+    font-family: inherit;
+    color: inherit;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: .2rem;
+    background: rgba($white, .5);
+    border: none;
+    border-bottom: .3rem solid transparent;
+    width: 100%;
+    display: block;
+      &:focus {
+        color: inherit;
+        font-weight: bold;
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba($black, .1);
+        border-bottom: .3rem solid $darkGreen;
+        color: $darkGrey;
+      }
+      &:focus:invalid {
+        border-bottom: .3rem solid $mediumOrange;
+      }
+      &::-webkit-input-placeholder {
+        color: $darkGrey;
+      }
+  }
+  &-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s;
+  }
+  &-input:placeholder-shown + &-label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+}
