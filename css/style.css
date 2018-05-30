@@ -627,7 +627,8 @@ header {
   .navigation-icon::before, .navigation-icon::after {
     content: "";
     position: absolute;
-    left: 0; }
+    left: 0;
+    transition: all .2s; }
   .navigation-icon::before {
     top: -.8rem; }
   .navigation-icon::after {
@@ -638,6 +639,17 @@ header {
 
 .navigation-button:hover .navigation-icon::after {
   top: 1rem; }
+
+.navigation-checkbox:checked + .navigation-button .navigation-icon {
+  background: transparent; }
+
+.navigation-checkbox:checked + .navigation-button .navigation-icon::before {
+  top: 0;
+  transform: rotate(135deg); }
+
+.navigation-checkbox:checked + .navigation-button .navigation-icon::after {
+  top: 0;
+  transform: rotate(-135deg); }
 
 .section-about {
   background: #f7f7f7;
