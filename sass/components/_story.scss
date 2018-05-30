@@ -2,8 +2,49 @@
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba($black, .1);
-  background: $white;
+  background: rgba($white, .6);
   border-radius: .3rem;
   padding: 6rem;
+  padding-left: 9rem;
   font-size: $smallFont;
+  transform: skewX(-12deg);
+  &-shape {
+    text-align: left;
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+    overflow: hidden;
+  }
+  &-image {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+  }
+  &-text {
+    transform: skewX(12deg);
+  }
+  &-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $white;
+    text-transform: uppercase;
+    font-size: $smallFont;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden;
+  }
+  &:hover &-caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  &:hover &-image {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(.3rem) brightness(80%);
+  }
 }
