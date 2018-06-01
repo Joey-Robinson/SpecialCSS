@@ -417,11 +417,36 @@ body {
   left: 0;
   background: rgba(12, 6, 6, 0.8);
   z-index: 9999; }
-  .modal-contenit {
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 75%;
-    height: 50rem;
     background: #ffffff;
-    box-shadow: 0 2rem 4rem rgba(12, 6, 6, 0.2); }
+    box-shadow: 0 2rem 4rem rgba(12, 6, 6, 0.2);
+    border-radius: .3rem;
+    display: table;
+    overflow: hidden; }
+  .modal-left {
+    width: 33.333333%;
+    display: table-cell; }
+  .modal-right {
+    width: 66.6666667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem; }
+  .modal-img {
+    display: block;
+    width: 100%; }
+  .modal-text {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 4rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 0.1rem solid #eee;
+    hyphens: auto; }
 
 .story {
   width: 75%;
