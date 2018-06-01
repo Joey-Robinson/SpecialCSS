@@ -6,6 +6,9 @@
   left: 0;
   background: rgba($black, .8);
   z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
     &-content {
       @include absCenter;
       width: 75%;
@@ -14,6 +17,9 @@
       border-radius: .3rem;
       display: table;
       overflow: hidden;
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(.25s);
+      transition: all .5s .2s;
     }
     &-left {
       width: 33.333333%;
@@ -37,5 +43,30 @@
       column-gap: 4rem;
       column-rule: .1rem solid $lighterGrey;
       hyphens: auto;
+    }
+    &:target {
+      opacity: 1;
+      visibility: visible;
+    }
+    &:target &-content {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    &-close {
+      &:link,
+      &:visited {
+        color: $darkerGrey;
+        position: absolute;
+        top: 2.5rem;
+        right: 2.5rem;
+        font-size: 3rem;
+        text-decoration: none;
+        display: inline-block;
+        transition: all .2s;
+        line-height: 1;
+      }
+      &:hover {
+        color: $darkGreen;
+      }
     }
 }
