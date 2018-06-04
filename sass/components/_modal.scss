@@ -20,10 +20,28 @@
       opacity: 0;
       transform: translate(-50%, -50%) scale(.25s);
       transition: all .5s .2s;
+      @include respond(tabLand) {
+        width: auto;
+        padding: 0;
+        margin: 0;
+      }
+      @include respond(tabPort) {
+        width: auto;
+      }
+      @include respond(phone) {
+        display: block;
+        position: relative;
+      }
     }
     &-left {
       width: 33.333333%;
       display: table-cell;
+      @include respond(tabLand) {
+        vertical-align: middle;
+      }
+      @include respond(tabPort) {
+         display: block
+      }
     }
     &-right {
       width: 66.6666667%;
@@ -34,6 +52,9 @@
     &-img {
       display: block;
       width: 100%;
+      @include respond(tabLand) {
+        display: none;
+      }
     }
     &-text {
       font-size: 1.8rem;
@@ -43,6 +64,11 @@
       column-gap: 4rem;
       column-rule: .1rem solid $lighterGrey;
       hyphens: auto;
+      @include respond(tabLand) {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        column-gap: 2rem;
+      }
     }
     &:target {
       opacity: 1;
