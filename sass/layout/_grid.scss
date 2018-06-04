@@ -2,18 +2,30 @@
   max-width: $gridWidth;
   color: $black;
   margin: 0 auto;
-
   &:not(:last-child) {
     margin-bottom: $gutterVertical;
+    @include respond(tabPort) {
+      margin-bottom: $gutterVerticalSmall;
+    }
+  }
+  @include respond(tabPort) {
+    max-width: 50rem;
+    padding: 0 3rem;
   }
 
   @include clearfix;
   
   [class^="col-"] {
     float: left;
-
     &:not(:last-child) {
       margin-right: $gutterHorizontal;
+      @include respond(tabPort) {
+        margin-right: 0;
+        margin-bottom: $gutterVerticalSmall;
+      }
+    }
+    @include respond(tabPort) {
+      width: 100% !important;
     }
   }
 
