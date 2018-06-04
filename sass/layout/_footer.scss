@@ -9,6 +9,9 @@
     &-logo-box {
       text-align: center;
       margin-bottom: 8rem;
+      @include respond(tabPort) {
+        margin-bottom: 6rem;
+      }
     }
     &-logo {
       width: 15rem;
