@@ -1,6 +1,9 @@
 .form {
   &-group:not(:last-child) {
     margin-bottom: 2rem;
+    @include respond(tabPort) {
+      width: 100%;
+    }
   }
   &-input {
     font-family: inherit;
@@ -12,19 +15,16 @@
     background: rgba($white, .5);
     border: none;
     border-bottom: .3rem solid transparent;
-    width: 100%;
+    width: 90%;
     display: block;
     transition: all .3s;
-    @include respond(tabPort) {
+    @include respond(tabLand) {
       width: 100%;
     }
       &:focus {
-        color: inherit;
-        font-weight: bold;
         outline: none;
         box-shadow: 0 1rem 2rem rgba($black, .1);
         border-bottom: .3rem solid $darkGreen;
-        color: $darkGrey;
       }
       &:focus:invalid {
         border-bottom: .3rem solid $mediumOrange;
