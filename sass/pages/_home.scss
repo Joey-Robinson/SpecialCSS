@@ -59,9 +59,28 @@
   background-size: 100%;
   border-radius: .3rem;
   box-shadow: 0 1.5rem 4rem rgba($black, .2);
-  height: 50rem;
+  @include respond(tabLand) {
+    background-image: linear-gradient(105deg,
+    rgba($white, .9) 0%,
+    rgba($white, .9) 65%,
+    transparent 65%),
+    url(../img/nat-10.jpg);
+    background-size: cover;
+  }
+  @include respond(tabPort) {
+    background-image: linear-gradient(to right,
+    rgba($white, .9) 0%,
+    rgba($white, .9) 100%),
+    url(../img/nat-10.jpg);  
+  }
     &-form {
       width: 50%;
       padding: 6rem;
+    }
+    @include respond(tabLand) {
+      width: 65%;
+    }
+    @include respond(tabLand) {
+      width: 100%;
     }
 }
